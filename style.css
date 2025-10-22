@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f4f4f4;
+  color: #222;
+  transition: 0.4s ease;
+}
+
+/* === AUTH SECTION === */
+.auth-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.auth-form {
+  flex: 1;
+  min-width: 300px;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.auth-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h2 {
+  font-size: 26px;
+  margin-bottom: 25px;
+}
+
+form {
+  display: none;
+  flex-direction: column;
+}
+
+form.active {
+  display: flex;
+  animation: fadeIn 0.5s ease;
+}
+
+label {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+  border-color: #4d7c0f;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  font-size: 13px;
+}
+
+.btn {
+  background: #4d7c0f;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #3f6212;
+}
+
+.divider {
+  text-align: center;
+  margin: 20px 0;
+  color: #888;
+  font-size: 13px;
+  position: relative;
+}
+.divider::before, .divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: #ddd;
+}
+.divider::before { left: 0; }
+.divider::after { right: 0; }
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.socials button {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 8px 14px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.socials img {
+  width: 16px;
+}
+
+.switch-text {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 13px;
+}
+.switch-text a {
+  color: #4d7c0f;
+  text-decoration: none;
+}
+
+/* === PORTFOLIO === */
+.hidden {
+  display: none;
+}
+
+.portfolio header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 60px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+}
+.logo span {
+  color: #4d7c0f;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.3s;
+}
+nav a:hover,
+nav a.active {
+  color: #4d7c0f;
+}
+
+.logout {
+  background: #4d7c0f;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* SECTIONS */
+.home {
+  text-align: center;
+  padding: 80px 20px;
+  background: #f8faf8;
+}
+.home h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+.home span {
+  color: #4d7c0f;
+}
+.home p {
+  max-width: 600px;
+  margin: 10px auto 25px;
+}
+
+.about, .works, .contact {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.gallery img {
+  width: 260px;
+  height: 190px;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: 0.3s;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.contact-form {
+  max-width: 400px;
+  margin: 25px auto;
+  display: flex;
+  flex-direction: column;
+}
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #f3f3f3;
+  font-size: 13px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .auth-container {
+    flex-direction: column;
+    margin: 20px;
+  }
+  .auth-image {
+    order: -1;
+    height: 200px;
+  }
+
+  .portfolio header {
+    flex-wrap: wrap;
+    padding: 20px 25px;
+  }
+  nav {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+  }
+  nav.show {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .logout {
+    margin-top: 10px;
+  }
+
+  .home h1 {
+    font-size: 30px;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}

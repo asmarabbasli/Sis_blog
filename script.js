@@ -8,8 +8,10 @@ const portfolio = document.getElementById("portfolio");
 const loginBtn = document.getElementById("login-btn");
 const signupBtn = document.getElementById("signup-btn");
 const logoutBtn = document.getElementById("logout-btn");
+const menuToggle = document.getElementById("menu-toggle");
+const navMenu = document.getElementById("nav-menu");
 
-// SWITCH between login/signup
+// Switch between login/signup
 toLogin.addEventListener("click", (e) => {
   e.preventDefault();
   signupForm.classList.remove("active");
@@ -24,19 +26,26 @@ toSignup.addEventListener("click", (e) => {
   formTitle.textContent = "Get Started Now";
 });
 
-// LOGIN / SIGNUP redirect simulation
-function enterPortfolio() {
+// Simulate login/signup transition
+function openPortfolio() {
   authSection.style.display = "none";
   portfolio.classList.remove("hidden");
   window.scrollTo(0, 0);
 }
 
-loginBtn.addEventListener("click", enterPortfolio);
-signupBtn.addEventListener("click", enterPortfolio);
+loginBtn.addEventListener("click", openPortfolio);
+signupBtn.addEventListener("click", openPortfolio);
+
+// Logout
 logoutBtn.addEventListener("click", () => {
   portfolio.classList.add("hidden");
   authSection.style.display = "flex";
   signupForm.classList.add("active");
   loginForm.classList.remove("active");
   formTitle.textContent = "Get Started Now";
+});
+
+// Mobile menu
+menuToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("show");
 });
